@@ -1019,7 +1019,9 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      width: calc(200 * var(--cta-unit));
+      width: auto;
+      min-width: calc(200 * var(--cta-unit));
+      padding: 0 calc(30 * var(--cta-unit));
       height: calc(65 * var(--cta-unit));
       background: #fff;
       color: #000;
@@ -1027,11 +1029,11 @@
       font-weight: 700;
       font-size: calc(22 * var(--cta-unit));
       line-height: 1;
-      padding: 0;
       border-radius: 999px;
       text-decoration: none;
       vertical-align: top;
     }
+    .cta-btn-label { font-size: 0.72em; font-weight: 600; color: #7A7A7A; margin-right: 0.55em; padding-right: 0.55em; border-right: 1px solid #D5D5D5; line-height: 1; }
     .sticker-stack {
       display: block;
       width: calc(477 * var(--cta-unit));
@@ -1056,7 +1058,7 @@
       .cta-join-inner > div { width: 100%; }
       .cta-join h2 { top: 0; font-size: clamp(28px, 4.2vw, 40px); line-height: 1.55; margin-bottom: 26px; }
       .cta-join p { top: 0; font-size: 16px; line-height: 1.85; margin-bottom: 28px; }
-      .cta-btn { width: 160px; height: 54px; font-size: 17px; }
+      .cta-btn { width: auto; min-width: 160px; padding: 0 22px; height: 54px; font-size: 16px; }
       .sticker-stack { width: min(100%, 420px); margin-top: 0; justify-self: center; }
     }
     /* ── RESPONSIVE ── */
@@ -1710,7 +1712,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <div>
       <h2>지금,<span>위프의 여정에 함께 하고 싶습니다.</span></h2>
       <p>훅을 데이터로 고르는 습관, 서브컬처 코드를 캐릭터의 언어로 옮기는 감각,<br>기획부터 제작까지 혼자 끝내는 속도 — 유입 소재에 필요한 세 가지를 갖고 왔습니다.</p>
-      <a class="cta-btn" href="mailto:hojin315@naver.com">연락하기 →</a>
+      <a class="cta-btn" href="mailto:hojin315@naver.com"><span class="cta-btn-label">연락하기</span>hojin315@naver.com →</a>
     </div>
     <!-- Shared viewBox preserves the reference angles, overlap, and proportions at every width. -->
     <svg class="sticker-stack" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
