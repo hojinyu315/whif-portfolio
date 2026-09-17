@@ -2137,8 +2137,9 @@ function resetMetrics() {
 /* 하단 고정 컨택 바(약 80px) 위로 지표 섹션이 조금이라도 드러나면 즉시 실행 */
 const metricsObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
+    /* 10% 선을 넘으면 실행, 아래로 내려가면 리셋 → 위·아래 어느 방향으로 다시 들어와도 매번 재실행 */
     if (entry.intersectionRatio >= 0.1) animateMetrics();
-    else if (!entry.isIntersecting) resetMetrics();
+    else resetMetrics();
   });
 }, { threshold: [0, 0.1], rootMargin: '0px 0px -80px 0px' });
 const metricsSection = document.querySelector('#metrics');
