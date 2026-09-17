@@ -926,10 +926,66 @@
       .sticker-stack { height: 200px; }
       .sticker-1 { left: 0; } .sticker-2 { left: 14%; } .sticker-3 { left: 30%; }
     }
+    /* ── MOTION LAYER ── */
+    :root { --pointer-x: 50%; --pointer-y: 50%; }
+    .page-progress { position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 300; pointer-events: none; }
+    .page-progress span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--accent), var(--pink)); transition: width 0.08s linear; }
+    .hero::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(255,255,255,0.16), transparent 25%); transition: opacity 0.4s ease; }
+    .hero.is-pointer-active::after { opacity: 1; }
+    .hero-inner { transform: translate3d(calc(var(--hero-x, 0) * 1px), calc(var(--hero-y, 0) * 1px), 0); transition: transform 0.18s ease-out; will-change: transform; }
+    .profile-photo { transition: transform 0.25s cubic-bezier(.22,.61,.36,1), box-shadow 0.25s ease; will-change: transform; }
+    .profile-photo:hover { transform: translate3d(0, -8px, 0) rotate(2deg); box-shadow: 12px 14px 0 rgba(0,0,0,0.09); }
+    .hero-divider { transform-origin: left center; animation: divider-in 1s 0.6s both cubic-bezier(.22,.61,.36,1); }
+    @keyframes divider-in { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
+    .hero-checks li { transition: transform 0.2s ease, color 0.2s ease; }
+    .hero-checks li:hover { transform: translateX(8px); color: var(--dyn-fg); }
+    .metric-item { position: relative; overflow: hidden; }
+    .metric-item::after { content: ''; position: absolute; top: 0; left: -100%; width: 70%; height: 1px; background: rgba(255,255,255,0.7); transition: left 0.7s ease; }
+    .metric-item:hover::after { left: 100%; }
+    .metric-num { white-space: nowrap; transition: letter-spacing 0.25s ease, transform 0.25s ease; }
+    .metric-item:hover .metric-num { letter-spacing: 1.5px; transform: translateX(3px); }
+    .philosophy-card, .activity-card, .timeline-item, .project-card { will-change: transform; }
+    .philosophy-card { position: relative; overflow: hidden; }
+    .philosophy-card::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.45s ease; }
+    .philosophy-card:hover::after { transform: scaleX(1); }
+    .timeline::after { content: ''; position: absolute; left: 80px; top: 6px; width: 1px; height: var(--timeline-progress, 0%); background: var(--accent); opacity: 1; transition: height 0.2s ease; pointer-events: none; }
+    .timeline-dot { transition: transform 0.3s ease, background 0.3s ease; }
+    .timeline-item.is-past .timeline-dot { transform: translateX(-50%) scale(1.7); background: var(--accent); }
+    .project-card { perspective: 900px; }
+    .project-card.is-tilting .card-thumb-wrap { transition: transform 0.08s linear; }
+    .card-thumb-wrap { transform-style: preserve-3d; }
+    .project-card:hover .card-thumb-wrap { box-shadow: 0 15px 28px rgba(0,0,0,0.13); }
+    .project-card-title { position: relative; display: inline; background-image: linear-gradient(var(--dark), var(--dark)); background-repeat: no-repeat; background-size: 0 1px; background-position: 0 100%; transition: background-size 0.3s ease, color 0.2s; }
+    .project-card:hover .project-card-title { background-size: 100% 1px; }
+    .card-heart { transition: transform 0.2s ease, color 0.2s ease; }
+    .card-heart:hover { transform: scale(1.15); }
+    .card-heart.is-liked { color: var(--pink); }
+    .card-heart.is-liked svg { fill: currentColor; stroke: currentColor; animation: heart-pop 0.35s ease; }
+    @keyframes heart-pop { 50% { transform: scale(1.45); } }
+    .modal-overlay { opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+    .modal { opacity: 0; transform: translateY(28px) scale(0.98); transition: opacity 0.35s ease, transform 0.35s cubic-bezier(.22,.61,.36,1); }
+    .modal-overlay.open .modal { opacity: 1; transform: translateY(0) scale(1); }
+    .modal-close { transition: color 0.2s ease, transform 0.2s ease; }
+    .modal-close:hover { transform: rotate(90deg); }
+    .modal-showcase-item { transition: transform 0.25s ease; }
+    .modal-showcase-item:hover { transform: translateY(-3px); }
+    .nav-toggle { display: none; width: 40px; height: 40px; border: 0; background: transparent; cursor: pointer; position: relative; }
+    .nav-toggle span, .nav-toggle::before, .nav-toggle::after { content: ''; position: absolute; left: 10px; width: 20px; height: 1px; background: var(--dark); transition: transform 0.25s ease, top 0.25s ease, opacity 0.25s ease; }
+    .nav-toggle::before { top: 13px; } .nav-toggle span { top: 19px; } .nav-toggle::after { top: 25px; }
+    nav.is-open .nav-toggle::before { top: 19px; transform: rotate(45deg); } nav.is-open .nav-toggle span { opacity: 0; } nav.is-open .nav-toggle::after { top: 19px; transform: rotate(-45deg); }
+    .scroll-top { position: fixed; right: 24px; bottom: 96px; z-index: 91; width: 38px; height: 38px; border: 1px solid rgba(0,0,0,0.2); background: rgba(255,255,255,0.86); color: var(--dark); cursor: pointer; opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease; backdrop-filter: blur(10px); }
+    .scroll-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .scroll-top:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; } }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 0 24px; height: 56px; }
-      nav ul { display: none; }
+      .nav-toggle { display: block; }
+      nav ul { display: flex; position: absolute; top: 56px; left: 0; right: 0; padding: 10px 24px 18px; flex-direction: column; gap: 2px; background: rgba(255,255,255,0.96); border-bottom: 1px solid var(--border); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease; }
+      nav.is-open ul { opacity: 1; visibility: visible; transform: translateY(0); }
+      .timeline::after { left: 50px; }
       section { padding: 72px 24px; }
       .hero { padding: 80px 24px 60px; min-height: auto; }
       .hero-inner { flex-direction: column; gap: 40px; }
@@ -1009,6 +1065,8 @@
   <span class="sidebar-label">PORTFOLIO</span>
 </div>
 
+<div class="page-progress" aria-hidden="true"><span></span></div>
+
 <!-- NAV -->
 <nav>
   <a href="#" class="logo">HOJIN YOO</a>
@@ -1018,7 +1076,9 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#activities">Activities</a></li>
   </ul>
+  <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span></button>
 </nav>
+<button class="scroll-top" type="button" aria-label="맨 위로 이동">↑</button>
 
 <!-- HERO -->
 <section class="hero" id="hero">
@@ -1889,8 +1949,11 @@
 })();
 
 function openModal(id) {
-  document.getElementById(id).classList.add('open');
+  const overlay = document.getElementById(id);
+  overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
+  const closeButton = overlay.querySelector('.modal-close');
+  if (closeButton) window.setTimeout(() => closeButton.focus(), 80);
 }
 function closeModal(id) {
   document.getElementById(id).classList.remove('open');
@@ -1964,6 +2027,73 @@ function updateSidebarColors() {
 window.addEventListener('scroll', updateSidebarColors, { passive: true });
 updateSidebarColors();
 
+/* ── INTERACTIVE MOTION ── */
+const progressBar = document.querySelector('.page-progress span');
+const scrollTopButton = document.querySelector('.scroll-top');
+const timeline = document.querySelector('.timeline');
+
+function updateMotion() {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+  if (progressBar) progressBar.style.width = `${Math.min(100, ratio * 100)}%`;
+  if (scrollTopButton) scrollTopButton.classList.toggle('is-visible', window.scrollY > 520);
+
+  if (timeline) {
+    const rect = timeline.getBoundingClientRect();
+    const progress = Math.max(0, Math.min(1, (window.innerHeight * 0.58 - rect.top) / rect.height));
+    timeline.style.setProperty('--timeline-progress', `${progress * 100}%`);
+    timeline.querySelectorAll('.timeline-item').forEach(item => {
+      item.classList.toggle('is-past', item.getBoundingClientRect().top < window.innerHeight * 0.6);
+    });
+  }
+}
+window.addEventListener('scroll', updateMotion, { passive: true });
+window.addEventListener('resize', updateMotion);
+updateMotion();
+
+if (scrollTopButton) {
+  scrollTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+const hero = document.querySelector('.hero');
+if (hero && window.matchMedia('(pointer: fine)').matches) {
+  hero.addEventListener('pointermove', (event) => {
+    const rect = hero.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    hero.style.setProperty('--pointer-x', `${(x + 0.5) * 100}%`);
+    hero.style.setProperty('--pointer-y', `${(y + 0.5) * 100}%`);
+    hero.style.setProperty('--hero-x', `${x * 8}`);
+    hero.style.setProperty('--hero-y', `${y * 5}`);
+    hero.classList.add('is-pointer-active');
+  });
+  hero.addEventListener('pointerleave', () => {
+    hero.style.setProperty('--hero-x', '0');
+    hero.style.setProperty('--hero-y', '0');
+    hero.classList.remove('is-pointer-active');
+  });
+}
+
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('pointermove', event => {
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+    const rect = card.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    const thumb = card.querySelector('.card-thumb-wrap');
+    if (!thumb) return;
+    card.classList.add('is-tilting');
+    thumb.style.transform = `rotateX(${y * -5}deg) rotateY(${x * 5}deg) translateY(-2px)`;
+  });
+  card.addEventListener('pointerleave', () => {
+    const thumb = card.querySelector('.card-thumb-wrap');
+    if (!thumb) return;
+    thumb.style.transform = '';
+    card.classList.remove('is-tilting');
+  });
+});
+
+
 /* ── 지표 카운트업 (보이면 실행, 완전히 사라지면 리셋) ── */
 const metricTargets = ['435만', '3주 → 4일', 'CTR 5.7 → 6.0%'];
 const metricItems = document.querySelectorAll('.metric-item');
@@ -2012,6 +2142,31 @@ const metricsObserver = new IntersectionObserver(entries => {
 }, { threshold: [0, 0.4] });
 const metricsSection = document.querySelector('#metrics');
 if (metricsSection) metricsObserver.observe(metricsSection);
+
+document.querySelectorAll('.card-heart').forEach(button => {
+  button.setAttribute('aria-label', '프로젝트 좋아요');
+  button.setAttribute('aria-pressed', 'false');
+  button.addEventListener('click', event => {
+    event.stopPropagation();
+    const liked = button.classList.toggle('is-liked');
+    button.setAttribute('aria-pressed', String(liked));
+  });
+});
+
+const nav = document.querySelector('nav');
+const navToggle = document.querySelector('.nav-toggle');
+if (nav && navToggle) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+  });
+  nav.querySelectorAll('ul a').forEach(link => link.addEventListener('click', () => {
+    nav.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', '메뉴 열기');
+  }));
+}
 </script>
 </body>
 </html>
