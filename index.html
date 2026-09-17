@@ -1773,6 +1773,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </ul>
     <div class="modal-section-title">Solution</div>
     <ul class="modal-list">
+      <li><strong>왜 생성 AI였나:</strong> 대안은 셋이었습니다 — 3D 모델링을 새로 뜨면 3주, 기존 장면 재편집은 트렌드 반영 불가, 생성 AI는 새 장면과 속도를 동시에 해결. 캐릭터 일관성만 잡히면 되는 문제라고 판단해 AI로 갔습니다</li>
       <li><strong>툴 선택·검증:</strong> 레퍼런스 기반 편집과 캐릭터 일관성에 강한 나노바나나를 메인으로 사용하되 단일 모델에 의존하지 않고, 같은 레퍼런스를 Gemini에도 넣어 결과를 나란히 비교한 뒤 원본에 가장 가까운 출력을 선택</li>
       <li><strong>이중 제약 해결:</strong> 흑백요리사·진격의 거인 등 외부 IP 패러디 시 '우리 캐릭터'와 '패러디 대상'이 동시에 인식돼야 하는 충돌을, 패러디 컨셉을 반영한 레퍼런스를 먼저 만들어 이후 모든 생성에 이미지로 함께 입력해 두 조건을 고정</li>
       <li><strong>규칙·템플릿화:</strong> 즉흥 수정과 후보정 의존을 병목으로 보고, 레퍼런스를 역할별(캐릭터·배경·표정·헤어·라이팅)로 나누고 충돌 시 우선순위까지 명시한 제작 템플릿을 설계해 반복 오류를 사전에 차단</li>
@@ -1782,13 +1783,23 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </ul>
     <div class="modal-section-title">Performance</div>
     <ul class="modal-list">
-      <li>기존 에피소드 장면을 트렌드에 맞게 재조립한 '래퍼 타노스' 패러디 릴스 — <strong>조회수 435만·좋아요 15만</strong></li>
-      <li>생성 AI로 원작에 없던 장면을 새로 만든 '치즈가 그리는대로!' 이탈리안 브레인롯 밈 패러디 — <strong>조회수 274만·좋아요 11.9만</strong></li>
+      <li><strong>기준점:</strong> 채널 숏폼은 업로드 4~5일 기준 <strong>100만</strong>이 평균선</li>
+      <li>기존 에피소드 장면을 트렌드에 맞게 재조립한 '래퍼 타노스' 패러디 릴스 — <strong>조회수 435만·좋아요 15만</strong> (기준선의 <strong>4배 이상</strong>)</li>
+      <li>생성 AI로 원작에 없던 장면을 새로 만든 '치즈가 그리는대로!' 이탈리안 브레인롯 밈 패러디 — <strong>조회수 274만·좋아요 11.9만</strong> (기준선의 <strong>2.7배</strong>)</li>
+    </ul>
+    <div class="modal-section-title">안 됐던 것 → 바꾼 것</div>
+    <ul class="modal-list">
+      <li>첫 AI 샘플은 캐릭터 비율과 질감이 원본과 달라 제작팀이 퀄리티를 우려했고, 그대로는 쓸 수 없었습니다 → Photoshop 후보정을 거친 샘플을 다시 보여주고 <strong>어느 단계까지 AI를 쓸지 범위를 함께 정한 뒤</strong> 상시 운영으로 옮겼습니다</li>
+      <li>초기엔 프롬프트를 즉흥 수정하고 후보정에 의존해 같은 오류가 반복됐습니다 → 레퍼런스를 역할별로 나누고 충돌 시 우선순위를 명시한 템플릿으로 교체해 반복 오류를 차단</li>
     </ul>
     <div class="modal-section-title">Lessons Learned</div>
     <ul class="modal-list">
       <li>기존 자산의 한계는 콘텐츠가 아니라 '제작 방식'의 한계였다는 점 — 소재를 새로 만들자 트렌드 반영이 가능해짐</li>
       <li>새 제작 방식은 개인 노하우로 두지 않고 팀이 반복할 수 있는 템플릿으로 남길 때 비로소 '변화'가 된다는 인사이트 확보</li>
+    </ul>
+    <div class="modal-section-title">위프에서는</div>
+    <ul class="modal-list">
+      <li>서브컬처 밈을 캐릭터의 언어로 옮길 때 <strong>원작 코드와 위프 캐릭터가 동시에 읽히게</strong> 만드는 이중 제약이 유입 소재의 핵심이라고 봅니다. 레퍼런스 템플릿화 습관은 Meta·X 채널별로 소재를 여러 버전 찍어내는 데 그대로 씁니다</li>
     </ul>
     <div class="modal-section-title">Process</div>
     <div class="modal-showcase" style="grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 200px 160px;">
@@ -1830,6 +1841,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </ul>
     <div class="modal-section-title">Solution</div>
     <ul class="modal-list">
+      <li><strong>왜 3단이었나:</strong> 예고편 하나에 정보를 몰아넣으면 개봉까지 기억이 안 남는다고 봤습니다. 런칭·티저·메인으로 나눠 기대감이 누적되게 하는 쪽을 택했습니다</li>
       <li><strong>3단 예고 구성:</strong> 런칭·티저·메인으로 나눠, 개봉 전까지 기대감이 누적되도록 발행 시점과 메시지 구조를 설계</li>
       <li><strong>편집 포인트 설계:</strong> 예고편의 핵심 흥미 요소를 앞단에 배치하고, 굿즈·이벤트 정보는 회차로 나눠 관람 동기를 반복 강화</li>
       <li><strong>신규 장면 제작:</strong> 에피소드에 없는 홍보용 장면은 원작 캐릭터의 정체성을 유지한 채 새로 제작해 삽입 — 캐릭터 일관성 제어에 강한 도구를 골라 원본과 이질감 없이 완성</li>
@@ -1850,6 +1862,10 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <li>관객의 흥미를 유도하는 지점을 중심으로 구성하고 영상의 흐름을 유지하는 편집 구조의 중요성을 이해</li>
       <li>런칭·티저·메인으로 이어지는 3단 예고 구성이 단일 예고편보다 개봉 전 기대감을 누적시키는 데 효과적이라는 점을 확인</li>
       <li>새 장면이 필요할 땐 원작 캐릭터의 정체성 유지를 최우선으로 둬야 홍보물 전체의 일관성이 지켜진다는 인사이트 도출</li>
+    </ul>
+    <div class="modal-section-title">위프에서는</div>
+    <ul class="modal-list">
+      <li>짧은 영상 안에서 <strong>흥미 요소를 앞단에 두고 정보는 뒤로 미루는 편집</strong> — 광고 소재의 첫 3초 훅과 같은 원리입니다. 예고편·클립·무빙 소재를 직접 편집한 경험을 숏폼 광고 소재 제작에 그대로 씁니다</li>
     </ul>
     <div class="modal-section-title">Process</div>
     <div class="modal-showcase" style="grid-template-columns: repeat(2, 1fr);">
@@ -1891,6 +1907,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </ul>
     <div class="modal-section-title">Solution</div>
     <ul class="modal-list">
+      <li><strong>왜 A/B였나:</strong> 시안을 감으로 고르면 숫자가 올라도 이유가 남지 않아 다음에 재현할 수 없다고 봤습니다. 비교 기준을 먼저 정하고 시안별 CTR로 고르는 쪽을 택했습니다</li>
       <li><strong>컨셉 전환:</strong> 단순 장면 캡처에서 벗어나, 시청자의 호기심·감정을 유도하는 반전 중심 + 시즌 이슈·트렌드를 반영한 썸네일로 기획해 시의성과 클릭 유도 요소를 동시에 강화</li>
       <li><strong>AI 제작:</strong> 기존 에피소드 캡처로는 만들 수 없던 트렌드·감정 중심 이미지와 패러디 장면을, 나노바나나로 레퍼런스 생성 → Gemini 결과와 비교해 원본에 가장 가까운 출력 선택 → Photoshop 보정으로 이어지는 파이프라인으로 자유롭게 제작</li>
       <li><strong>검증·최적화:</strong> YouTube Studio A/B 테스트로 썸네일별 CTR을 비교·검증하며 클릭 유도 구성을 데이터 기반으로 반복 개선</li>
@@ -1898,7 +1915,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <div class="modal-section-title">Performance</div>
     <ul class="modal-list">
       <li>입사 전/후 4개월 비교 기준 CTR <strong>5.7% → 6.0%</strong> 상승</li>
-      <li>예상 수익 <strong>$8,500 이상</strong> 증가</li>
+      <li>YouTube Studio 추정 기준 예상 수익 <strong>$8,500 이상</strong> 증가</li>
       <li>구독자 증가율 약 <strong>12%</strong> 향상</li>
     </ul>
     <div class="modal-section-title">Roles & Responsibilities</div>
@@ -1907,10 +1924,18 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <li>YouTube Studio A/B 테스트를 활용해 썸네일별 CTR 및 시청 시간 성과 비교·검증</li>
       <li>콘텐츠 업로드 일정 수립 및 운영 총괄</li>
     </ul>
+    <div class="modal-section-title">안 됐던 것 → 바꾼 것</div>
+    <ul class="modal-list">
+      <li>초기 시안은 제가 재밌다고 본 장면 중심이었고 A/B에서 밀렸습니다 → <strong>대중이 공감할 상황(시즌 이슈·트렌드)</strong>을 넣은 시안으로 바꾼 뒤부터 통했고, 그 구성을 규칙으로 고정</li>
+    </ul>
     <div class="modal-section-title">Lessons Learned</div>
     <ul class="modal-list">
       <li>썸네일은 단순한 시각 요소가 아니라 사용자의 클릭을 유도하는 '상황 설계'라는 점을 학습</li>
       <li>개인적인 흥미보다 대중이 공감할 수 있는 보편적 상황과 감정을 반영할 때 CTR과 반응이 더 높아진다는 인사이트 확인</li>
+    </ul>
+    <div class="modal-section-title">위프에서는</div>
+    <ul class="modal-list">
+      <li>광고 소재의 훅도 같은 루프입니다 — <strong>소구점별로 시안을 여러 개 만들어 반응으로 고르고, 통한 구성을 규칙으로 고정해 채널별 효율에 맞춰 최적화</strong>. 썸네일 CTR에서 한 일을 이미지·숏폼 소재로 옮기는 것</li>
     </ul>
     <div class="modal-section-title">Contents</div>
     <div class="modal-showcase">
@@ -1954,7 +1979,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </ul>
     <div class="modal-section-title">Performance</div>
     <ul class="modal-list">
-      <li>한 달 내 조회수 <strong>1,000만 이상</strong> 콘텐츠 2편 달성 — 오리지널 쇼츠 포맷의 확산 가능성 검증</li>
+      <li><strong>기준점:</strong> 채널 숏폼은 업로드 4~5일 기준 <strong>100만</strong>이 평균선</li>
+      <li>한 달 내 조회수 <strong>1,000만 이상</strong> 콘텐츠 2편 (기준선의 <strong>10배</strong>) — 오리지널 쇼츠 포맷의 확산 가능성 검증</li>
       <li>평균 시청 지속률 <strong>69% → 72.8%</strong> 상승, 이탈률 감소</li>
       <li>댓글 내 영화 관련 언급 증가 → 자연스러운 홍보 효과 확인</li>
     </ul>
@@ -1965,10 +1991,18 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <li>데이터 기반 인사이트를 다음 콘텐츠 기획에 반영 — 트렌드 변화 빠르게 적용</li>
       <li>브랜디드 건의 <strong>소재 검수·수정 요청 회신 프로세스</strong> 관리 및 광고주·내부 제작팀 사이 일정 조율</li>
     </ul>
+    <div class="modal-section-title">안 됐던 것 → 바꾼 것</div>
+    <ul class="modal-list">
+      <li>극장판 홍보 메시지를 앞에 세운 편들은 팬 콘텐츠로서의 재미가 떨어져 반응이 낮았습니다 → <strong>홍보를 상황극 안에 녹이고 캐릭터 배역을 먼저 정하는 구조</strong>로 바꾼 뒤 시청 지속률 69% → 72.8%</li>
+    </ul>
     <div class="modal-section-title">Lessons Learned</div>
     <ul class="modal-list">
       <li>쇼츠는 단순 영상 편집이 아닌 타겟의 공감과 반응을 유도하는 구조 설계라는 점을 체득</li>
       <li>홍보 메시지도 직접 전달하기보다 상황과 캐릭터 안에 자연스럽게 녹일 때 반응이 높아진다는 인사이트 도출</li>
+    </ul>
+    <div class="modal-section-title">위프에서는</div>
+    <ul class="modal-list">
+      <li>캐릭터 채팅의 광고 소재는 결국 <strong>'이 캐릭터와 대화하면 어떤 순간이 생기나'를 한 장면으로 보여주는 일</strong>이라고 봅니다. 캐릭터의 매력을 설정이 아니라 상황에서 드러내는 상황극 설계가 그 방법이고, 광고주–제작팀 사이 조율 경험은 기획자·데이터 마케터와의 협업에 씁니다</li>
     </ul>
     <div class="modal-section-title">Contents</div>
     <div class="modal-showcase">
@@ -2003,12 +2037,14 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </ul>
     <div class="modal-section-title">Solution</div>
     <ul class="modal-list">
-      <li>극장판 내 유쾌한 장면을 활용한 숏폼 콘텐츠를 기획·제작하고 주기적으로 발행하여 자연스러운 바이럴 유도</li>
-      <li>굿즈·이벤트 정보를 시각적으로 강조한 콘텐츠를 제작해 관람 동기를 강화하고 방문 유입으로 연결</li>
+      <li><strong>왜 회차 분할이었나:</strong> 굿즈·이벤트 정보를 한 번에 공개하는 방식과 회차로 나누는 방식 중, 개봉까지 기억에 남으려면 반복 노출이 필요하다고 판단해 <strong>정보를 주차별로 나눠 배치</strong>했습니다</li>
+      <li>극장판 내 유쾌한 장면을 활용한 숏폼을 주기적으로 발행해 홍보 티가 나지 않게 관심을 유지</li>
+      <li>주차별 굿즈·이벤트 정보 콘텐츠로 관람 동기를 쌓아 방문 유입으로 연결</li>
     </ul>
     <div class="modal-section-title">Performance</div>
     <ul class="modal-list">
-      <li>1기 대비 관객 수 <strong>28.6% 증가 (+57,661명)</strong> 성과 달성에 기여</li>
+      <li><strong>기준점:</strong> 1기 관객 201,727명 → 2기 259,388명, <strong>28.6% 증가 (+57,661명)</strong></li>
+      <li><strong>귀속:</strong> 스크린 수·개봉 시기 등 여러 요인이 함께 작용한 캠페인 결과입니다. 제가 통제한 것은 온라인 콘텐츠의 구성과 발행 구조이고, 단독 효과로 말하지 않습니다</li>
     </ul>
     <div class="modal-section-title">Roles & Responsibilities</div>
     <ul class="modal-list">
@@ -2017,11 +2053,19 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <li>주차별 관람 굿즈·이벤트 정보를 시각화한 콘텐츠 제작 및 발행</li>
       <li>상영 시기(추석 연휴)에 맞춘 유튜브·인스타그램 콘텐츠 일정 기획 및 운영</li>
     </ul>
+    <div class="modal-section-title">안 됐던 것 → 바꾼 것</div>
+    <ul class="modal-list">
+      <li>초반엔 굿즈·이벤트 정보를 단발로 올렸고 관람 전 기대감으로 이어지지 않았습니다 → <strong>정보를 회차로 나눠 개봉까지 쌓이게 재설계</strong></li>
+    </ul>
     <div class="modal-section-title">Lessons Learned</div>
     <ul class="modal-list">
       <li>조회수는 반응의 크기일 뿐 행동의 증거는 아니라는 점 — 화면에서 생긴 관심이 실제 방문으로 넘어가려면 관람 동기를 회차로 나눠 쌓아야 한다는 것을 확인</li>
       <li>콘텐츠는 '완성도'보다 적절한 타이밍과 핵심 포인트 전달이 더 중요하다는 점을 체감</li>
       <li>성과는 개별 콘텐츠가 아니라 전략적인 배치와 반복 노출 구조에서 만들어진다는 인사이트 확보</li>
+    </ul>
+    <div class="modal-section-title">위프에서는</div>
+    <ul class="modal-list">
+      <li>온라인 반응을 <strong>실제 행동(관람)으로 넘기는 지점을 설계</strong>한 경험 — 유입에서 가입 전환까지를 목표로 하는 광고 소재와 같은 문제입니다</li>
     </ul>
     <div class="modal-section-title">Contents</div>
     <div class="modal-showcase">
@@ -2056,13 +2100,15 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </ul>
     <div class="modal-section-title">Solution</div>
     <ul class="modal-list">
+      <li><strong>왜 반복 구조였나:</strong> 이어받은 채널은 성과가 있었지만 잘 된 것을 반복하는 구조가 없었습니다. 개별 콘텐츠의 감에 기대지 않고 <strong>잘 된 포맷을 시리즈로 여러 번 만들고, 소재는 주간 회의에서 8명이 가져온 밈을 교차검증해 고르는</strong> 쪽을 택했습니다</li>
       <li>이어받은 숏폼 포맷에 트렌드·밈·시의성을 매주 갱신해 반영하는 오리지널 콘텐츠 기획</li>
       <li>캐릭터 성격 기반 상황극 포맷을 유지·보완해 반복 제작이 가능한 콘텐츠 구조로 정착</li>
       <li>콘텐츠 소비 → 채널 재방문 → 팬 유입으로 이어지는 팬덤 빌딩 구조를 고려해 설계</li>
     </ul>
     <div class="modal-section-title">Performance</div>
     <ul class="modal-list">
-      <li>4개월간 조회수 <strong>300만+ 숏폼 콘텐츠 6건</strong> 제작</li>
+      <li><strong>기준점:</strong> 체리툰 숏폼 평균선은 업로드 기준 <strong>150만</strong></li>
+      <li>4개월간 조회수 <strong>300만+ 숏폼 콘텐츠 6건</strong> (기준선의 <strong>2배</strong>)</li>
       <li>평균 시청 지속률 <strong>76.7% → 80.3%</strong> 상승</li>
     </ul>
     <div class="modal-section-title">Roles & Responsibilities</div>
@@ -2075,6 +2121,10 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <ul class="modal-list">
       <li>숏폼 콘텐츠는 단순 편집이 아니라 타겟과 상황을 기반으로 설계되어야 한다는 점을 학습</li>
       <li>포맷 구조에 따라 조회수와 유입 성과가 달라지며 콘텐츠 기획 단계에서 구조 설계가 핵심이라는 인사이트 도출</li>
+    </ul>
+    <div class="modal-section-title">위프에서는</div>
+    <ul class="modal-list">
+      <li>인지도가 높지 않은 IP 채널을 이어받아 기준선의 2배를 냈습니다. <strong>새 캐릭터를 처음 보는 사람에게 닿는 소재</strong>를 만드는 일에 같은 방식(반복 구조 + 소재 교차검증)을 씁니다</li>
     </ul>
     <div class="modal-section-title">Contents</div>
     <div class="modal-showcase">
@@ -2101,6 +2151,10 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <li><strong>사용 툴:</strong> Photoshop <span class="skill skill-high">상</span> · Firefly · Gemini · Kling</li>
       <li><strong>목적:</strong> 상업 IP 제약 없이 "어떻게 보는 사람을 몰입시킬 수 있는가"를 자유롭게 실험하는 공간</li>
     </ul>
+    <div class="modal-section-title">Problem</div>
+    <ul class="modal-list">
+      <li>상업 IP에서는 캐릭터와 세계관이 정해져 있어 <strong>"무엇이 사람을 멈추게 하는가"를 처음부터 실험할 수 없음</strong> — 감정·서사·구도를 자유롭게 바꿔가며 반응을 볼 공간이 필요</li>
+    </ul>
     <div class="modal-section-title">Solution</div>
     <ul class="modal-list">
       <li><strong>작업 방식:</strong> 감정과 상황을 "보이는 장면"으로 설계하고, 같은 장소·다른 시간대/감정,<br>한 장면에서 다음 장면으로 이어지는 연속 서사를 이미지로 기획·제작</li>
@@ -2110,6 +2164,10 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <ul class="modal-list">
       <li>몰입은 "다음이 궁금한 구조"에서 옴 — 이미지 한 장에도 시간 흐름과 감정 변화를 설계 가능</li>
       <li>AI는 머릿속 장면을 구체화하는 속도를 높이지만, 어떤 장면을 만들지는 결국 언어화 능력에서 출발함</li>
+    </ul>
+    <div class="modal-section-title">위프에서는</div>
+    <ul class="modal-list">
+      <li>감정과 관계를 <strong>한 장면·한 대사로 상상하게 만드는</strong> 연습입니다. 위프의 웹소설형 감성 — 캐릭터와의 관계가 한 컷에서 읽히는 — 소재를 만들 때 이 감각을 씁니다</li>
     </ul>
     <div class="modal-section-title">Contents</div>
     <div style="display:flex; gap:8px; margin-top:16px;">
@@ -2165,6 +2223,10 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <ul class="modal-list">
       <li>개인 취향보다 대중이 공감할 수 있는 상황·감정을 시각화하는 일이 중요함을 체감</li>
       <li>콘텐츠는 적절한 타이밍과 포인트 설계, 반복 노출을 통해 성과로 이어진다는 인사이트 도출</li>
+    </ul>
+    <div class="modal-section-title">위프에서는</div>
+    <ul class="modal-list">
+      <li>감정·궁금증 중심 썸네일은 <strong>훅의 원형</strong>이었습니다. 클릭(유입)과 소비(반응)를 다른 콘텐츠로 나눠 각각 최적화한 구조는 유입 소재와 리텐션 소재를 나누는 사고와 같습니다</li>
     </ul>
     <div class="modal-section-title">Contents</div>
     <div class="modal-showcase">
