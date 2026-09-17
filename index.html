@@ -374,6 +374,7 @@
     .metric-item:hover { background: rgba(238,30,49,0.10); }
 
     .metric-num {
+      white-space: nowrap;
       font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
       font-size: 34px;
       font-weight: 700;
@@ -1962,6 +1963,55 @@ function updateSidebarColors() {
 }
 window.addEventListener('scroll', updateSidebarColors, { passive: true });
 updateSidebarColors();
+
+/* ── 지표 카운트업 (보이면 실행, 완전히 사라지면 리셋) ── */
+const metricTargets = ['435만', '3주 → 4일', 'CTR 5.7 → 6.0%'];
+const metricItems = document.querySelectorAll('.metric-item');
+let metricsAnimated = false;
+let metricRafIds = [];
+
+function cancelMetricRafs() {
+  metricRafIds.forEach(id => cancelAnimationFrame(id));
+  metricRafIds = [];
+}
+
+function animateMetrics() {
+  if (metricsAnimated) return;
+  metricsAnimated = true;
+  cancelMetricRafs();
+  metricItems.forEach((item, index) => {
+    const el = item.querySelector('.metric-num');
+    if (!el) return;
+    const duration = 900 + index * 180;
+    const start = performance.now();
+    const target = metricTargets[index];
+    const draw = now => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      if (index === 0) el.textContent = `${Math.round(435 * eased)}만`;
+      if (index === 1) el.textContent = `3주 → ${Math.round(21 - 17 * eased)}일`;
+      if (index === 2) el.textContent = `CTR ${(5.7 * eased).toFixed(1)} → ${(6.0 * eased).toFixed(1)}%`;
+      if (t < 1) metricRafIds.push(requestAnimationFrame(draw)); else el.textContent = target;
+    };
+    metricRafIds.push(requestAnimationFrame(draw));
+  });
+}
+
+/* 섹션이 화면 밖으로 완전히 나가면 초기화 → 다시 들어올 때 카운트업 재실행 */
+function resetMetrics() {
+  metricsAnimated = false;
+  cancelMetricRafs();
+}
+
+/* 40% 이상 보이면 즉시 발동(첫 화면에 걸쳐 있어도 실행), 완전히 사라지면 리셋 */
+const metricsObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio >= 0.4) animateMetrics();
+    else if (!entry.isIntersecting) resetMetrics();
+  });
+}, { threshold: [0, 0.4] });
+const metricsSection = document.querySelector('#metrics');
+if (metricsSection) metricsObserver.observe(metricsSection);
 </script>
 </body>
 </html>
