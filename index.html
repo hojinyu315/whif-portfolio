@@ -89,7 +89,7 @@
       font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
       font-size: 15px;
       line-height: 1.7;
-      padding-bottom: 80px;
+      padding-bottom: 0;
       word-break: keep-all;
       overflow-wrap: break-word;
     }
@@ -909,81 +909,29 @@
     html.cta-in-view footer { transform: translateY(100%); }
     html.cta-in-view .scroll-top { bottom: 28px; }
 
-    /* ── CTA: 벙커키즈 JOIN 스티커 ── */
-    .cta-join { background: #111; color: #fff; padding: 96px 60px 120px; }
-    .cta-join-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
-    .cta-join h2 { font-family: 'Pretendard', sans-serif; font-size: clamp(28px, 3.6vw, 44px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.25; color: #fff; margin-bottom: 22px; }
-    .cta-join h2 span { color: rgba(255,255,255,0.55); }
-    .cta-join p { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.62); max-width: 520px; margin-bottom: 30px; word-break: keep-all; }
-    .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #111; font-weight: 700; font-size: 14px; padding: 15px 26px; border-radius: 999px; text-decoration: none; transition: transform 0.2s ease, background 0.2s ease; }
+    /* ── CTA: 벙커키즈 JOIN 스티커 (원본 톤 그대로) ── */
+    .cta-join { background: #1B1B1B; color: #fff; padding: 110px 60px 120px; }
+    .cta-join-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+    .cta-join h2 { font-family: 'Pretendard', sans-serif; font-size: 40px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.32; color: #fff; margin-bottom: 26px; }
+    .cta-join h2 span { display: block; color: #B9B9B9; }
+    .cta-join p { font-size: 17px; line-height: 1.9; color: #9C9C9C; max-width: 560px; margin-bottom: 34px; word-break: keep-all; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 6px; background: #fff; color: #111; font-weight: 700; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; transition: transform 0.2s ease, background 0.2s ease; }
     .cta-btn:hover { transform: translateY(-2px); background: var(--accent-soft); }
-    .sticker-stack { position: relative; height: 240px; }
-    .sticker { position: absolute; font-family: 'Pretendard', sans-serif; font-weight: 900; letter-spacing: -0.02em; padding: 10px 26px; border-radius: 4px; white-space: nowrap; box-shadow: 0 10px 30px rgba(0,0,0,0.35); transition: transform 0.35s cubic-bezier(.22,.61,.36,1); }
-    .sticker-1 { top: 10px; left: 8%; background: var(--accent); color: #fff; font-size: clamp(36px, 4.4vw, 56px); transform: rotate(-9deg); }
-    .sticker-2 { top: 96px; left: 16%; background: #fff; color: #111; font-size: clamp(24px, 3vw, 40px); transform: rotate(4deg); }
-    .sticker-3 { top: 176px; left: 38%; background: #fff; color: #111; font-size: clamp(30px, 3.8vw, 48px); transform: rotate(-5deg); }
+    .sticker-stack { position: relative; height: 300px; justify-self: end; width: 100%; max-width: 520px; }
+    .sticker { position: absolute; font-family: 'Pretendard', sans-serif; font-weight: 900; font-style: italic; letter-spacing: -0.01em; padding: 8px 22px; border-radius: 3px; white-space: nowrap; transition: transform 0.35s cubic-bezier(.22,.61,.36,1); line-height: 1.15; }
+    .sticker-1 { top: 0; right: 40%; background: #5B3FE0; color: #fff; font-size: 54px; transform: rotate(-9deg); }
+    .sticker-2 { top: 108px; right: 4%; background: #fff; color: #111; font-size: 40px; transform: rotate(3deg); }
+    .sticker-3 { top: 206px; right: 2%; background: #fff; color: #111; font-size: 40px; transform: rotate(-6deg); }
     .sticker-stack:hover .sticker-1 { transform: rotate(-12deg) translateY(-6px); }
-    .sticker-stack:hover .sticker-2 { transform: rotate(6deg) translateX(6px); }
-    .sticker-stack:hover .sticker-3 { transform: rotate(-3deg) translateY(-4px); }
+    .sticker-stack:hover .sticker-2 { transform: rotate(5deg) translateX(6px); }
+    .sticker-stack:hover .sticker-3 { transform: rotate(-4deg) translateY(-4px); }
     @media (max-width: 768px) {
       .cta-join { padding: 64px 24px 80px; }
       .cta-join-inner { grid-template-columns: 1fr; }
-      .sticker-stack { height: 200px; }
-      .sticker-1 { left: 0; } .sticker-2 { left: 14%; } .sticker-3 { left: 30%; }
+      .cta-join h2 { font-size: 30px; }
+      .sticker-stack { height: 240px; max-width: 100%; justify-self: stretch; }
+      .sticker-1 { font-size: 42px; right: 42%; } .sticker-2 { font-size: 30px; top: 92px; } .sticker-3 { font-size: 30px; top: 170px; }
     }
-    /* ── MOTION LAYER ── */
-    :root { --pointer-x: 50%; --pointer-y: 50%; }
-    .page-progress { position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 300; pointer-events: none; }
-    .page-progress span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--accent), var(--pink)); transition: width 0.08s linear; }
-    .hero::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(255,255,255,0.16), transparent 25%); transition: opacity 0.4s ease; }
-    .hero.is-pointer-active::after { opacity: 1; }
-    .hero-inner { transform: translate3d(calc(var(--hero-x, 0) * 1px), calc(var(--hero-y, 0) * 1px), 0); transition: transform 0.18s ease-out; will-change: transform; }
-    .profile-photo { transition: transform 0.25s cubic-bezier(.22,.61,.36,1), box-shadow 0.25s ease; will-change: transform; }
-    .profile-photo:hover { transform: translate3d(0, -8px, 0) rotate(2deg); box-shadow: 12px 14px 0 rgba(0,0,0,0.09); }
-    .hero-divider { transform-origin: left center; animation: divider-in 1s 0.6s both cubic-bezier(.22,.61,.36,1); }
-    @keyframes divider-in { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
-    .hero-checks li { transition: transform 0.2s ease, color 0.2s ease; }
-    .hero-checks li:hover { transform: translateX(8px); color: var(--dyn-fg); }
-    .metric-item { position: relative; overflow: hidden; }
-    .metric-item::after { content: ''; position: absolute; top: 0; left: -100%; width: 70%; height: 1px; background: rgba(255,255,255,0.7); transition: left 0.7s ease; }
-    .metric-item:hover::after { left: 100%; }
-    .metric-num { white-space: nowrap; transition: letter-spacing 0.25s ease, transform 0.25s ease; }
-    .metric-item:hover .metric-num { letter-spacing: 1.5px; transform: translateX(3px); }
-    .philosophy-card, .activity-card, .timeline-item, .project-card { will-change: transform; }
-    .philosophy-card { position: relative; overflow: hidden; }
-    .philosophy-card::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.45s ease; }
-    .philosophy-card:hover::after { transform: scaleX(1); }
-    .timeline::after { content: ''; position: absolute; left: 80px; top: 6px; width: 1px; height: var(--timeline-progress, 0%); background: var(--accent); opacity: 1; transition: height 0.2s ease; pointer-events: none; }
-    .timeline-dot { transition: transform 0.3s ease, background 0.3s ease; }
-    .timeline-item.is-past .timeline-dot { transform: translateX(-50%) scale(1.7); background: var(--accent); }
-    .project-card { perspective: 900px; }
-    .project-card.is-tilting .card-thumb-wrap { transition: transform 0.08s linear; }
-    .card-thumb-wrap { transform-style: preserve-3d; }
-    .project-card:hover .card-thumb-wrap { box-shadow: 0 15px 28px rgba(0,0,0,0.13); }
-    .project-card-title { position: relative; display: inline; background-image: linear-gradient(var(--dark), var(--dark)); background-repeat: no-repeat; background-size: 0 1px; background-position: 0 100%; transition: background-size 0.3s ease, color 0.2s; }
-    .project-card:hover .project-card-title { background-size: 100% 1px; }
-    .card-heart { transition: transform 0.2s ease, color 0.2s ease; }
-    .card-heart:hover { transform: scale(1.15); }
-    .card-heart.is-liked { color: var(--pink); }
-    .card-heart.is-liked svg { fill: currentColor; stroke: currentColor; animation: heart-pop 0.35s ease; }
-    @keyframes heart-pop { 50% { transform: scale(1.45); } }
-    .modal-overlay { opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
-    .modal-overlay.open { opacity: 1; visibility: visible; }
-    .modal { opacity: 0; transform: translateY(28px) scale(0.98); transition: opacity 0.35s ease, transform 0.35s cubic-bezier(.22,.61,.36,1); }
-    .modal-overlay.open .modal { opacity: 1; transform: translateY(0) scale(1); }
-    .modal-close { transition: color 0.2s ease, transform 0.2s ease; }
-    .modal-close:hover { transform: rotate(90deg); }
-    .modal-showcase-item { transition: transform 0.25s ease; }
-    .modal-showcase-item:hover { transform: translateY(-3px); }
-    .nav-toggle { display: none; width: 40px; height: 40px; border: 0; background: transparent; cursor: pointer; position: relative; }
-    .nav-toggle span, .nav-toggle::before, .nav-toggle::after { content: ''; position: absolute; left: 10px; width: 20px; height: 1px; background: var(--dark); transition: transform 0.25s ease, top 0.25s ease, opacity 0.25s ease; }
-    .nav-toggle::before { top: 13px; } .nav-toggle span { top: 19px; } .nav-toggle::after { top: 25px; }
-    nav.is-open .nav-toggle::before { top: 19px; transform: rotate(45deg); } nav.is-open .nav-toggle span { opacity: 0; } nav.is-open .nav-toggle::after { top: 19px; transform: rotate(-45deg); }
-    .scroll-top { position: fixed; right: 24px; bottom: 96px; z-index: 91; width: 38px; height: 38px; border: 1px solid rgba(0,0,0,0.2); background: rgba(255,255,255,0.86); color: var(--dark); cursor: pointer; opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease; backdrop-filter: blur(10px); }
-    .scroll-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
-    .scroll-top:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; } }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 0 24px; height: 56px; }
@@ -1439,8 +1387,8 @@
 <section class="cta-join" id="join">
   <div class="cta-join-inner">
     <div>
-      <h2>지금,<br>위프의 여정에 <span>함께 하고 싶습니다.</span></h2>
-      <p>브랜드를 모르는 사람에게 닿는 밈 설계, 이틀에 하나꼴의 제작 속도, 훅을 검증하는 습관 — 신규 유입 소재에 필요한 세 가지를 갖고 왔습니다.</p>
+      <h2>지금,<span>위프의 여정에 함께 하고 싶습니다.</span></h2>
+      <p>브랜드를 모르는 사람에게 닿는 밈 설계, 이틀에 하나꼴의 제작 속도,<br>훅을 검증하는 습관 — 신규 유입 소재에 필요한 세 가지를 갖고 왔습니다.</p>
       <a class="cta-btn" href="mailto:hojin315@naver.com">연락하기 →</a>
     </div>
     <div class="sticker-stack" aria-hidden="true">
