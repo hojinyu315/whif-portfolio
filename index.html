@@ -964,25 +964,100 @@
     html.cta-in-view footer { transform: translateY(100%); }
     html.cta-in-view .scroll-top { bottom: 28px; }
 
-    /* ── CTA: 벙커키즈 JOIN 스티커 (원본 톤 그대로) ── */
-    .cta-join { background: #1B1B1B; color: #fff; padding: 96px 60px 104px; }
-    .cta-join-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
-    .cta-join h2 { font-family: 'Pretendard', sans-serif; font-size: 40px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.32; color: #fff; margin-bottom: 26px; }
-    .cta-join h2 span { display: block; color: #B9B9B9; }
-    .cta-join p { font-size: 17px; line-height: 1.9; color: #9C9C9C; max-width: 560px; margin-bottom: 34px; word-break: keep-all; }
-    .cta-btn { display: inline-flex; align-items: center; gap: 6px; background: #fff; color: #111; font-weight: 700; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
-    .sticker-stack { position: relative; height: 330px; justify-self: end; width: 100%; max-width: 480px; }
-    .sticker { position: absolute; font-family: 'Poppins', 'Pretendard', sans-serif; font-weight: 900; font-style: normal; letter-spacing: -0.01em; padding: 8px 20px 10px; border-radius: 0; white-space: nowrap; line-height: 1.1; text-transform: uppercase; }
-    /* 원본: 보라 → 흰 → 흰, 서로 살짝 겹치며 오른쪽 아래로 계단 */
-    .sticker-1 { top: 0; right: 46%; background: #4D3AB5; color: #fff; font-size: 64px; transform: rotate(-9deg); z-index: 1; }
-    .sticker-2 { top: 118px; right: 0; background: #fff; color: #111; font-size: 52px; transform: rotate(3deg); z-index: 2; }
-    .sticker-3 { top: 226px; right: 2px; background: #fff; color: #111; font-size: 50px; transform: rotate(-4deg); z-index: 3; }
-    @media (max-width: 768px) {
-      .cta-join { padding: 64px 24px 80px; }
-      .cta-join-inner { grid-template-columns: 1fr; }
-      .cta-join h2 { font-size: 30px; }
-      .sticker-stack { height: 240px; max-width: 100%; justify-self: stretch; }
-      .sticker-1 { font-size: 46px; right: 48%; } .sticker-2 { font-size: 36px; top: 70px; } .sticker-3 { font-size: 34px; top: 140px; }
+    /* ── CTA: reference-matched sticker composition ── */
+    /* Embedded subset keeps the heavy display face intact when opened locally. */
+    @font-face {
+      font-family: 'Portfolio Sticker Black';
+      src: url('data:font/ttf;base64,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') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+      font-display: block;
+    }
+    /* The supplied 2048 × 529 reference is the desktop layout coordinate system. */
+    .cta-join {
+      --cta-unit: 0.048828125vw;
+      background: #191919;
+      color: #fff;
+      padding: calc(69 * var(--cta-unit)) calc(204 * var(--cta-unit)) calc(85 * var(--cta-unit));
+    }
+    .cta-join-inner {
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: calc(1094 * var(--cta-unit)) calc(477 * var(--cta-unit));
+      gap: 0;
+      align-items: start;
+    }
+    .cta-join-inner > div { width: calc(1000 * var(--cta-unit)); min-width: 0; }
+    .cta-join h2 {
+      position: relative;
+      top: calc(4 * var(--cta-unit));
+      font-family: 'Pretendard', sans-serif;
+      font-size: calc(52 * var(--cta-unit));
+      font-weight: 700;
+      letter-spacing: -0.005em;
+      line-height: calc(77 * var(--cta-unit));
+      color: #fff;
+      margin: 0 0 calc(35 * var(--cta-unit));
+    }
+    .cta-join h2 span { display: block; color: #8D8D8D; }
+    .cta-join p {
+      position: relative;
+      top: var(--cta-unit);
+      font-size: calc(26 * var(--cta-unit));
+      font-weight: 400;
+      line-height: calc(44 * var(--cta-unit));
+      letter-spacing: 0;
+      color: #676872;
+      max-width: none;
+      margin: 0 0 calc(33 * var(--cta-unit));
+      word-break: keep-all;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: calc(200 * var(--cta-unit));
+      height: calc(65 * var(--cta-unit));
+      background: #fff;
+      color: #000;
+      font-family: 'Pretendard', sans-serif;
+      font-weight: 700;
+      font-size: calc(22 * var(--cta-unit));
+      line-height: 1;
+      padding: 0;
+      border-radius: 999px;
+      text-decoration: none;
+      vertical-align: top;
+    }
+    .sticker-stack {
+      display: block;
+      width: calc(477 * var(--cta-unit));
+      max-width: none;
+      height: auto;
+      aspect-ratio: 700 / 500;
+      margin-top: calc(33 * var(--cta-unit));
+      justify-self: start;
+      overflow: visible;
+    }
+    .sticker-stack text {
+      font-family: 'Portfolio Sticker Black', 'Poppins', sans-serif;
+      font-weight: 900;
+      font-style: normal;
+      font-synthesis: none;
+      text-anchor: middle;
+      letter-spacing: 0;
+    }
+    @media (max-width: 1023px) {
+      .cta-join { padding: 64px max(24px, 7vw) 72px; }
+      .cta-join-inner { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+      .cta-join-inner > div { width: 100%; }
+      .cta-join h2 { top: 0; font-size: clamp(28px, 4.2vw, 40px); line-height: 1.55; margin-bottom: 26px; }
+      .cta-join p { top: 0; font-size: 16px; line-height: 1.85; margin-bottom: 28px; }
+      .cta-btn { width: 160px; height: 54px; font-size: 17px; }
+      .sticker-stack { width: min(100%, 420px); margin-top: 0; justify-self: center; }
     }
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
@@ -1050,7 +1125,201 @@
     .sec-dark .activity-bullets li { color: var(--on-dark); }
     .sec-dark .activity-bullets li::before { color: var(--accent); }
 
+/* Motion inspired by the reference site's slide-up / fade-in sections.
+   All final positions and all portfolio copy remain those of the source. */
+section[id] { scroll-margin-top: 82px; }
+#scroll-bg {
+  background-size: 180% 180%;
+  animation: portfolio-gradient-flow 24s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+html.hero-in-view #scroll-bg { animation-play-state: running; }
+@keyframes portfolio-gradient-flow {
+  0% { background-position: 8% 30%; }
+  50% { background-position: 70% 70%; }
+  100% { background-position: 100% 35%; }
+}
+
+nav { transition: background .35s ease, box-shadow .35s ease, border-color .35s ease; }
+nav.has-scrolled { box-shadow: 0 8px 30px rgba(35, 20, 74, .06); }
+nav ul a { position: relative; border-bottom-color: transparent !important; }
+nav ul a::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
+  background: currentColor; transform: scaleX(0); transform-origin: left;
+  transition: transform .32s cubic-bezier(.22, 1, .36, 1);
+}
+nav ul a:is(:hover, :focus-visible, .active)::after { transform: scaleX(1); }
+
+.section-title, .sec-dark .section-title { position: relative; border-bottom-color: transparent; }
+.section-title::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
+  background: linear-gradient(90deg, #5B3EE8, #B16BD7 65%, #F0489F);
+  transform-origin: left; transform: scaleX(1);
+}
+html.brand-motion .brand-reveal {
+  opacity: 0; transform: translate3d(0, 22px, 0);
+  transition: opacity .75s cubic-bezier(.22, 1, .36, 1), transform .75s cubic-bezier(.22, 1, .36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+html.brand-motion .brand-reveal.is-revealed { opacity: 1; transform: translate3d(0, 0, 0); }
+html.brand-motion .section-title.brand-reveal::after {
+  transform: scaleX(0);
+  transition: transform .9s .12s cubic-bezier(.22, 1, .36, 1);
+}
+html.brand-motion .section-title.is-revealed::after { transform: scaleX(1); }
+.fade-up { transition-duration: .72s; transition-timing-function: cubic-bezier(.22, 1, .36, 1); }
+
+.sticker-art { opacity: 1; transform: none; transform-box: fill-box; transform-origin: center; }
+html.brand-motion .sticker-stack.is-staged .sticker-art {
+  opacity: 0; transform: translateY(34px) rotate(5deg) scale(.93);
+  transition: transform .85s cubic-bezier(.16, 1, .3, 1), opacity .5s ease;
+}
+html.brand-motion .sticker-stack.is-staged .sticker-1 .sticker-art { transition-delay: 80ms; }
+html.brand-motion .sticker-stack.is-staged .sticker-2 .sticker-art { transition-delay: 220ms; }
+html.brand-motion .sticker-stack.is-staged .sticker-3 .sticker-art { transition-delay: 380ms; }
+html.brand-motion .sticker-stack.is-revealed .sticker-art { opacity: 1; transform: none; }
+
+.cta-btn {
+  position: relative; isolation: isolate;
+  translate: var(--magnet-x, 0px) var(--magnet-y, 0px);
+  transition: translate .25s ease, box-shadow .3s ease, background .3s ease, color .3s ease;
+}
+.cta-btn::after {
+  content: ''; position: absolute; inset: -6px; border: 1px solid rgba(255,255,255,.3);
+  border-radius: inherit; opacity: 0; transform: scale(.9); pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+}
+.cta-btn:is(:hover, :focus-visible)::after { opacity: 1; transform: scale(1); }
+.cta-btn:is(:hover, :focus-visible) { box-shadow: 0 8px 32px rgba(142, 105, 230, .18); }
+.cta-btn:focus-visible { outline: 2px solid #B497F5; outline-offset: 7px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .philosophy-card, .activity-card { transition: transform .35s ease, box-shadow .35s ease, background .35s ease; }
+  .philosophy-card.visible:hover, .activity-card.visible:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(74, 47, 158, .10); }
+  .card-thumb-wrap::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(circle at var(--card-x, 50%) var(--card-y, 50%), rgba(255,255,255,.18), transparent 58%);
+    opacity: 0; transition: opacity .3s ease;
+  }
+  .project-card:hover .card-thumb-wrap::after { opacity: 1; }
+  .project-card-thumb { transition-duration: .6s; transition-timing-function: cubic-bezier(.22, 1, .36, 1); }
+  .tag { transition: background .25s ease, color .25s ease; }
+  .tag:hover, .sec-dark .tag:hover { background: #E9E1FB; color: #4A2F9E; }
+}
+.project-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: var(--radius-md); }
+.project-card:focus-visible .project-card-thumb { filter: brightness(1) saturate(1); }
+
+@media (max-width: 768px) {
+  section[id] { scroll-margin-top: 72px; }
+  html.brand-motion .brand-reveal { transform: translate3d(0, 14px, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #scroll-bg { animation: none !important; }
+  .hero-inner, .card-thumb-wrap { transform: none !important; }
+  .cta-btn { translate: none !important; }
+  html.brand-motion .brand-reveal,
+  html.brand-motion .sticker-stack.is-staged .sticker-art { opacity: 1; transform: none; transition: none; }
+  html.brand-motion .section-title.brand-reveal::after { transform: scaleX(1); transition: none; }
+  .fade-up { opacity: 1; transform: none; }
+}
+
   </style>
+<!-- Embedded Poppins subset: font license
+Copyright 2020 The Poppins Project Authors (https://github.com/itfoundry/Poppins)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+-->
 </head>
 <body>
 
@@ -1443,11 +1712,27 @@
       <p>훅을 데이터로 고르는 습관, 서브컬처 코드를 캐릭터의 언어로 옮기는 감각,<br>기획부터 제작까지 혼자 끝내는 속도 — 유입 소재에 필요한 세 가지를 갖고 왔습니다.</p>
       <a class="cta-btn" href="mailto:hojin315@naver.com">연락하기 →</a>
     </div>
-    <div class="sticker-stack" aria-hidden="true">
-      <div class="sticker sticker-1">HIRE</div>
-      <div class="sticker sticker-2">HOJIN YOO</div>
-      <div class="sticker sticker-3">NOW</div>
-    </div>
+    <!-- Shared viewBox preserves the reference angles, overlap, and proportions at every width. -->
+    <svg class="sticker-stack" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <g class="sticker sticker-1" transform="translate(186.3 108.65) rotate(-9.62)">
+        <g class="sticker-art">
+        <rect x="-164.15" y="-71.65" width="328.3" height="143.3" fill="#4F2DA4" />
+        <text x="0" y="41" font-size="120" fill="#fff">HIRE</text>
+        </g>
+      </g>
+      <g class="sticker sticker-2" transform="translate(388 257.6) rotate(3.69)">
+        <g class="sticker-art">
+        <rect x="-278.2" y="-59.4" width="556.4" height="118.8" fill="#fff" />
+        <text x="0" y="25.5" font-size="80" fill="#191919">HOJIN YOO</text>
+        </g>
+      </g>
+      <g class="sticker sticker-3" transform="translate(554.3 413.2) rotate(10.62)">
+        <g class="sticker-art">
+        <rect x="-116.65" y="-52.75" width="233.3" height="105.5" fill="#fff" />
+        <text x="0" y="25.5" font-size="80" fill="#000">NOW</text>
+        </g>
+      </g>
+    </svg>
   </div>
 </section>
 
@@ -2025,7 +2310,8 @@ function updateSidebarColors() {
   sidebarItems.forEach(item => {
     const r = item.getBoundingClientRect();
     const mid = r.top + r.height / 2;
-    const onDark = !bgIsLight && darkRects.some(dr => mid >= dr.top && mid <= dr.bottom);
+    const closingRect = document.getElementById('join')?.getBoundingClientRect();
+    const onDark = (closingRect && mid >= closingRect.top && mid <= closingRect.bottom) || (!bgIsLight && darkRects.some(dr => mid >= dr.top && mid <= dr.bottom));
     item.classList.toggle('sidebar-item-light', onDark);
   });
 }
@@ -2061,7 +2347,7 @@ if (scrollTopButton) {
 }
 
 const hero = document.querySelector('.hero');
-if (hero && window.matchMedia('(pointer: fine)').matches) {
+if (hero && window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   hero.addEventListener('pointermove', (event) => {
     const rect = hero.getBoundingClientRect();
     const x = (event.clientX - rect.left) / rect.width - 0.5;
@@ -2081,13 +2367,15 @@ if (hero && window.matchMedia('(pointer: fine)').matches) {
 
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('pointermove', event => {
-    if (!window.matchMedia('(pointer: fine)').matches) return;
+    if (!window.matchMedia('(pointer: fine)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const rect = card.getBoundingClientRect();
     const x = (event.clientX - rect.left) / rect.width - 0.5;
     const y = (event.clientY - rect.top) / rect.height - 0.5;
     const thumb = card.querySelector('.card-thumb-wrap');
     if (!thumb) return;
     card.classList.add('is-tilting');
+    card.style.setProperty('--card-x', `${(x + .5) * 100}%`);
+    card.style.setProperty('--card-y', `${(y + .5) * 100}%`);
     thumb.style.transform = `rotateX(${y * -5}deg) rotateY(${x * 5}deg) translateY(-2px)`;
   });
   card.addEventListener('pointerleave', () => {
@@ -2183,6 +2471,89 @@ if (nav && navToggle) {
     navToggle.setAttribute('aria-label', '메뉴 열기');
   }));
 }
+</script>
+<script>
+/* Visual enhancement only: no copy or metrics are generated or replaced. */
+(() => {
+  const root = document.documentElement;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const topNav = document.querySelector('nav');
+  const intro = document.querySelector('#hero');
+  const stack = document.querySelector('.sticker-stack');
+  const button = document.querySelector('.cta-btn');
+  const revealNodes = [...document.querySelectorAll('.section-label, .section-title, .project-releases-header, .cta-join h2, .cta-join p, .cta-btn')];
+  let observer;
+  let navFrame = 0;
+
+  if ('IntersectionObserver' in window && !reduceMotion.matches) {
+    root.classList.add('brand-motion');
+    revealNodes.forEach(el => {
+      el.classList.add('brand-reveal');
+      if (el.matches('.section-title')) el.style.setProperty('--reveal-delay', '70ms');
+    });
+    if (stack) stack.classList.add('is-staged');
+    observer = new IntersectionObserver(entries => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (!isIntersecting) return;
+        target.classList.add('is-revealed');
+        observer.unobserve(target);
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -20px 0px' });
+    revealNodes.forEach(el => observer.observe(el));
+    if (stack) observer.observe(stack);
+  }
+
+  if (intro && 'IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      root.classList.toggle('hero-in-view', entries.some(e => e.isIntersecting));
+    }).observe(intro);
+  }
+  const updateNav = () => {
+    navFrame = 0;
+    if (topNav) topNav.classList.toggle('has-scrolled', window.scrollY > 20);
+  };
+  window.addEventListener('scroll', () => {
+    if (!navFrame) navFrame = requestAnimationFrame(updateNav);
+  }, { passive: true });
+  updateNav();
+
+  // Only fine pointers get the subtle magnetic contact button.
+  if (button) {
+    const resetMagnet = () => {
+      button.style.removeProperty('--magnet-x');
+      button.style.removeProperty('--magnet-y');
+    };
+    button.addEventListener('pointermove', event => {
+      if (!finePointer.matches || reduceMotion.matches) return;
+      const b = button.getBoundingClientRect();
+      button.style.setProperty('--magnet-x', `${((event.clientX - b.left) / b.width - .5) * 8}px`);
+      button.style.setProperty('--magnet-y', `${((event.clientY - b.top) / b.height - .5) * 6}px`);
+    });
+    button.addEventListener('pointerleave', resetMagnet);
+    button.addEventListener('blur', resetMagnet);
+  }
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.addEventListener('keydown', event => {
+      if (event.target !== card || !['Enter', ' '].includes(event.key)) return;
+      event.preventDefault();
+      card.click();
+    });
+  });
+
+  const revealAll = () => {
+    if (!reduceMotion.matches) return;
+    root.classList.remove('brand-motion');
+    revealNodes.forEach(el => el.classList.add('is-revealed'));
+    if (stack) stack.classList.add('is-revealed');
+    if (observer) observer.disconnect();
+  };
+  reduceMotion.addEventListener('change', revealAll);
+})();
+
 </script>
 </body>
 </html>
