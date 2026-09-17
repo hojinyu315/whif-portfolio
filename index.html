@@ -904,6 +904,11 @@
     .fade-up-delay-2 { transition-delay: 0.2s; }
 
 
+    /* CTA 섹션이 보이면 하단 고정 컨택 바를 아래로 내려 숨김 */
+    footer { transition: transform 0.4s cubic-bezier(.22,.61,.36,1); }
+    html.cta-in-view footer { transform: translateY(100%); }
+    html.cta-in-view .scroll-top { bottom: 28px; }
+
     /* ── CTA: 벙커키즈 JOIN 스티커 ── */
     .cta-join { background: #111; color: #fff; padding: 96px 60px 120px; }
     .cta-join-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
@@ -2093,6 +2098,14 @@ document.querySelectorAll('.project-card').forEach(card => {
   });
 });
 
+
+/* ── CTA 섹션이 컨택 바 위로 드러나면 바 숨김, 벗어나면 복귀 ── */
+const ctaSection = document.getElementById('join');
+if (ctaSection) {
+  new IntersectionObserver(entries => {
+    entries.forEach(entry => document.documentElement.classList.toggle('cta-in-view', entry.isIntersecting));
+  }, { threshold: 0, rootMargin: '0px 0px -80px 0px' }).observe(ctaSection);
+}
 
 /* ── 지표 카운트업 (보이면 실행, 완전히 사라지면 리셋) ── */
 const metricTargets = ['435만', '3주 → 4일', 'CTR 5.7 → 6.0%'];
