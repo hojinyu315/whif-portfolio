@@ -970,17 +970,13 @@
     .cta-join h2 { font-family: 'Pretendard', sans-serif; font-size: 40px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.32; color: #fff; margin-bottom: 26px; }
     .cta-join h2 span { display: block; color: #B9B9B9; }
     .cta-join p { font-size: 17px; line-height: 1.9; color: #9C9C9C; max-width: 560px; margin-bottom: 34px; word-break: keep-all; }
-    .cta-btn { display: inline-flex; align-items: center; gap: 6px; background: #fff; color: #111; font-weight: 700; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; transition: transform 0.2s ease, background 0.2s ease; }
-    .cta-btn:hover { transform: translateY(-2px); background: var(--accent-soft); }
-    .sticker-stack { position: relative; height: 260px; justify-self: end; width: 100%; max-width: 500px; }
-    .sticker { position: absolute; font-family: 'Poppins', 'Pretendard', sans-serif; font-weight: 900; font-style: normal; letter-spacing: -0.01em; padding: 8px 20px 10px; border-radius: 0; white-space: nowrap; line-height: 1.1; text-transform: uppercase; transition: transform 0.35s cubic-bezier(.22,.61,.36,1); }
+    .cta-btn { display: inline-flex; align-items: center; gap: 6px; background: #fff; color: #111; font-weight: 700; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+    .sticker-stack { position: relative; height: 330px; justify-self: end; width: 100%; max-width: 480px; }
+    .sticker { position: absolute; font-family: 'Poppins', 'Pretendard', sans-serif; font-weight: 900; font-style: normal; letter-spacing: -0.01em; padding: 8px 20px 10px; border-radius: 0; white-space: nowrap; line-height: 1.1; text-transform: uppercase; }
     /* 원본: 보라 → 흰 → 흰, 서로 살짝 겹치며 오른쪽 아래로 계단 */
-    .sticker-1 { top: 0; right: 44%; background: #4D3AB5; color: #fff; font-size: 62px; transform: rotate(-9deg); z-index: 1; }
-    .sticker-2 { top: 78px; right: 0; background: #fff; color: #111; font-size: 50px; transform: rotate(3deg); z-index: 2; }
-    .sticker-3 { top: 156px; right: 2px; background: #fff; color: #111; font-size: 50px; transform: rotate(-4deg); z-index: 3; }
-    .sticker-stack:hover .sticker-1 { transform: rotate(-12deg) translateY(-6px); }
-    .sticker-stack:hover .sticker-2 { transform: rotate(5deg) translateX(6px); }
-    .sticker-stack:hover .sticker-3 { transform: rotate(-2deg) translateY(-4px); }
+    .sticker-1 { top: 0; right: 46%; background: #4D3AB5; color: #fff; font-size: 64px; transform: rotate(-9deg); z-index: 1; }
+    .sticker-2 { top: 118px; right: 0; background: #fff; color: #111; font-size: 52px; transform: rotate(3deg); z-index: 2; }
+    .sticker-3 { top: 226px; right: 2px; background: #fff; color: #111; font-size: 50px; transform: rotate(-4deg); z-index: 3; }
     @media (max-width: 768px) {
       .cta-join { padding: 64px 24px 80px; }
       .cta-join-inner { grid-template-columns: 1fr; }
@@ -2008,7 +2004,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 
 document.querySelectorAll(
-  '.hero-inner, .metric-item, .philosophy-headline, .philosophy-card, .timeline-item, .project-card, .activity-card, .cta-join-inner'
+  '.hero-inner, .metric-item, .philosophy-headline, .philosophy-card, .timeline-item, .project-card, .activity-card'
 ).forEach((el, i) => {
   el.classList.add('fade-up');
   if (i % 3 === 1) el.classList.add('fade-up-delay-1');
