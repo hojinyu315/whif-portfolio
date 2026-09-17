@@ -1867,9 +1867,10 @@
 
     /* 글자·네비는 임계점에서 한 번에 전환.
        기준 = 사이드바 유튜브 아이콘이 흰 배경(PHILOSOPHY 상단선) 아래로 완전히 들어온 순간 */
+    /* 기준 = 사이드바 세 번째(노션) 아이콘 아래쪽이 흰 구간 상단선에 닿는 순간 */
     var boundary = target.getBoundingClientRect().top;
-    var iconTop = ytIcon ? ytIcon.getBoundingClientRect().top : window.innerHeight * 0.5;
-    root.classList.toggle('fg-dark', boundary <= iconTop);
+    var iconBottom = ytIcon ? ytIcon.getBoundingClientRect().bottom : window.innerHeight * 0.5;
+    root.classList.toggle('fg-dark', boundary <= iconBottom);
   }
 
   function onScroll() {
