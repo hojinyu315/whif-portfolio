@@ -1758,7 +1758,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </ul>
     <div class="modal-section-title">Solution</div>
     <ul class="modal-list">
-      <li><strong>왜 생성 AI였나:</strong> 대안은 셋 — 3D 모델링을 새로 뜨면 3주, 기존 장면 재편집은 트렌드 반영 불가, 생성 AI는 새 장면과 속도를 동시에 해결. 캐릭터 일관성만 잡히면 되는 문제라고 판단해 AI로 갔습니다</li>
+      <li><strong>왜 생성 AI였나:</strong> 3D로 새 장면을 만들면 모델링만 3주 이상, 기획부터 발행까지는 한 달을 넘기는 게 대부분이었습니다. 트렌드는 1~2주면 바뀌니 발행 시점엔 이미 지난 밈이 됐습니다. 제작 기간을 줄일 방법을 찾다가, 생성 AI는 <strong>여러 단계를 거치지 않고 바로 결과물이 나온다</strong>는 점에서 캐릭터 일관성만 잡히면 되는 문제라고 판단했습니다</li>
       <li><strong>캐릭터 일관성 확보:</strong> 레퍼런스 기반 편집에 강한 나노바나나를 메인으로 쓰되 같은 레퍼런스를 Gemini에도 넣어 원본에 가장 가까운 출력을 선택. 흑백요리사·진격의 거인 같은 외부 IP 패러디는 '우리 캐릭터'와 '패러디 대상'이 동시에 읽혀야 해서, <strong>패러디 컨셉을 반영한 레퍼런스를 먼저 만들어 이후 모든 생성에 함께 입력</strong>해 두 조건을 고정. 완성 이미지는 Kling으로 영상화해 숏폼에 삽입</li>
       <li><strong>템플릿화 → 팀 자산:</strong> 즉흥 수정과 후보정 의존이 병목이라고 보고, 레퍼런스를 역할별(캐릭터·배경·표정·헤어·라이팅)로 나누고 충돌 시 우선순위까지 명시한 제작 템플릿을 설계. 적용 후엔 후보정 없이 쓰거나 미세 수정만으로 완료돼 <strong>누가 작업해도 같은 품질</strong>이 나오는 자산으로 전환</li>
       <li><strong>소재 선정 기준:</strong> 매주 도는 트렌드를 음악·밈·주차별 이슈 세 갈래로 나눠 후보를 올리는 기준을 만들고, 8명이 참여하는 주간 소재 회의를 건의해 운영. 화제성만 보지 않고 <strong>지금 인력과 일정으로 빠르게 만들 수 있는 소재인지</strong>를 함께 판단</li>
@@ -1771,7 +1771,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </ul>
     <div class="modal-section-title">Failure → Retry</div>
     <ul class="modal-list">
-      <li>첫 AI 샘플은 캐릭터 비율과 질감이 원본과 달라 제작팀이 퀄리티를 우려했고, 그대로는 쓸 수 없었습니다 → Photoshop 후보정을 거친 샘플을 다시 보여주고 <strong>어느 단계까지 AI를 쓸지 범위를 함께 정한 뒤</strong> 상시 운영으로 옮겼습니다</li>
+      <li>첫 AI 샘플은 문제가 여럿이었습니다 — <strong>동작과 표정의 어색함</strong>, 그리고 <strong>캐릭터 일관성</strong>(비율이 달라지거나 눈·코·입이 뭉개져 다른 캐릭터처럼 보임). 제작팀이 퀄리티를 우려했고 그대로는 쓸 수 없었습니다 → Photoshop 후보정을 거친 샘플을 다시 보여주고 <strong>어느 단계까지 AI를 쓸지 범위를 함께 정한 뒤</strong> 상시 운영으로 옮겼습니다</li>
       <li>초기엔 프롬프트를 즉흥 수정하고 후보정에 의존해 같은 오류가 반복됐습니다 → 레퍼런스를 역할별로 나누고 충돌 시 우선순위를 명시한 템플릿으로 교체해 반복 오류를 차단</li>
     </ul>
     <div class="modal-section-title">Lessons Learned</div>
@@ -1819,14 +1819,14 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </ul>
     <div class="modal-section-title">Solution</div>
     <ul class="modal-list">
-      <li><strong>왜 3단이었나:</strong> 예고편 하나에 정보를 몰아넣으면 개봉까지 기억이 안 남는다고 봤습니다. 런칭·티저·메인으로 나눠 기대감이 누적되게 하는 쪽을 택했습니다</li>
-      <li><strong>3단 예고 구성:</strong> 런칭·티저·메인으로 나눠, 개봉 전까지 기대감이 누적되도록 발행 시점과 메시지 구조를 설계</li>
+      <li><strong>예고편을 스토리 기반으로 바꾼 판단:</strong> 3기는 하나의 장편이 아니라 10분짜리 에피소드 6개를 이어 붙인 옴니버스였습니다. 다만 이번엔 <strong>'7대 죄악'에서 출발한 악당들 vs 브레드이발소</strong>라는 컨셉이 확실했기 때문에, 예고편에서는 그 악당 컨셉을 하나의 큰 이야기로 이어 붙여 장편 애니메이션처럼 보이게 구성했습니다. 에피소드 나열이 아니라 <strong>하나의 대결 구도</strong>로 읽히게 해서 관객의 기대감을 높이는 쪽을 택했습니다</li>
+      <li><strong>3단 예고 구성:</strong> 2기부터 이어온 런칭·티저·메인 3단 구조는 유지하되, 각 편이 악당 컨셉의 다른 단계를 보여주도록 메시지를 나눠 개봉 전까지 기대감이 누적되게 설계</li>
       <li><strong>편집 포인트 설계:</strong> 예고편의 핵심 흥미 요소를 앞단에 배치하고, 굿즈·이벤트 정보는 회차로 나눠 관람 동기를 반복 강화</li>
       <li><strong>신규 장면 제작:</strong> 에피소드에 없는 홍보용 장면은 원작 캐릭터의 정체성을 유지한 채 새로 제작해 삽입 — 캐릭터 일관성 제어에 강한 도구를 골라 원본과 이질감 없이 완성</li>
     </ul>
     <div class="modal-section-title">Performance</div>
     <ul class="modal-list">
-      <li>런칭·티저·메인 예고편 평균 조회수 <strong>6.3만 → 12만 (약 2배) 상승</strong></li>
+      <li><strong>기준점:</strong> 2기 예고편 평균 조회수 <strong>6.3만</strong> → 3기 예고편 평균 <strong>12만</strong> (약 2배)</li>
       <li>최종 관객 수 <strong>282,263명</strong> — 전작(2기 259,388명) 대비 <strong>8.8% 증가 (+22,875명)</strong></li>
     </ul>
     <div class="modal-section-title">Roles & Responsibilities</div>
@@ -1838,7 +1838,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <div class="modal-section-title">Lessons Learned</div>
     <ul class="modal-list">
       <li>관객의 흥미를 유도하는 지점을 중심으로 구성하고 영상의 흐름을 유지하는 편집 구조의 중요성을 이해</li>
-      <li>런칭·티저·메인으로 이어지는 3단 예고 구성이 단일 예고편보다 개봉 전 기대감을 누적시키는 데 효과적이라는 점을 확인</li>
+      <li>옴니버스라도 컨셉이 확실하면 예고편은 하나의 이야기로 묶을 수 있고, 그쪽이 에피소드 나열보다 기대감을 만든다는 점을 확인</li>
       <li>새 장면이 필요할 땐 원작 캐릭터의 정체성 유지를 최우선으로 둬야 홍보물 전체의 일관성이 지켜진다는 인사이트 도출</li>
     </ul>
     <div class="modal-section-title">Process</div>
@@ -1877,20 +1877,20 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <div class="modal-section-title">Problem</div>
     <ul class="modal-list">
       <li>기존 썸네일은 <strong>본편 장면을 그대로 캡처해 제목만 얹는 형식</strong>이 반복됐고, 소재도 <strong>에피소드 안 장면으로 제한</strong>돼 시즌 이슈·트렌드·감정을 담을 수 없었음 — 클릭을 유도할 요소가 없는 구조</li>
-      <li>콘텐츠 노출은 유지되었지만 CTR, 조회수, 구독자 증가로 이어지지 않는 구조적 한계 존재</li>
+      <li>콘텐츠 노출은 유지됐지만 CTR·조회수·구독자 증가로 이어지지 않았고, 무엇보다 <strong>썸네일 성과를 분석하는 과정 자체가 없어</strong> 잘 나와도 이유를 몰랐음 — 감에 의존하고 잘 나오면 "잘 나왔구나"로 끝나는 구조</li>
     </ul>
     <div class="modal-section-title">Solution</div>
     <ul class="modal-list">
-      <li><strong>왜 A/B였나:</strong> 시안을 감으로 고르면 숫자가 올라도 이유가 남지 않아 다음에 재현할 수 없다고 봤습니다. 같은 영상에 시안을 2~3개 걸고 <strong>YouTube Studio A/B로 시안별 CTR과 시청 시간을 같은 기간에 비교</strong>해 고르는 쪽을 택했습니다</li>
+      <li><strong>시안 → 사내 투표 → A/B, 두 단계로 골랐습니다:</strong> 시안은 기존 캡처 1개 + 트렌드 1개(2안), 또는 트렌드 2개를 각각 녹인 3안으로 준비. 먼저 <strong>사내 약 50명 투표</strong>로 추이를 보고 상위 2개를 YouTube Studio A/B 테스트에 올렸고, 투표가 비등하면 3개 전부 올려 시안별 CTR·시청 시간으로 확정했습니다. 감으로 고르면 숫자가 올라도 이유가 안 남아서 재현이 안 된다고 봤기 때문입니다</li>
       <li><strong>컨셉 전환:</strong> 단순 장면 캡처에서 벗어나, 시청자의 호기심·감정을 유도하는 반전 중심 + 시즌 이슈·트렌드를 반영한 썸네일로 기획해 시의성과 클릭 유도 요소를 동시에 강화</li>
       <li><strong>AI 제작:</strong> 기존 에피소드 캡처로는 만들 수 없던 트렌드·감정 중심 이미지와 패러디 장면을, 나노바나나로 레퍼런스 생성 → Gemini 결과와 비교해 원본에 가장 가까운 출력 선택 → Photoshop 보정으로 이어지는 파이프라인으로 자유롭게 제작</li>
       <li><strong>검증·최적화:</strong> YouTube Studio A/B 테스트로 썸네일별 CTR을 비교·검증하며 클릭 유도 구성을 데이터 기반으로 반복 개선</li>
-      <li><strong>자산화:</strong> 통한 구성(반전 중심 + 시즌·트렌드 상황 + 감정 표정)을 제작 원칙으로 정리해 남김 — 제가 썸네일을 맡지 않게 된 뒤에도 <strong>이후 제작자가 같은 원칙으로 제작</strong>해 기준이 유지됨</li>
+      <li><strong>자산화:</strong> A/B 테스트와 클릭률 중심의 지표 분석 자체를 제가 도입했고, 통한 구성(반전 중심 + 시즌·트렌드 상황 + 감정 표정)을 <strong>인수인계 문서로 작성</strong>해 남겼습니다. 제가 썸네일을 맡지 않게 된 뒤 들어온 제작자들 모두 이 문서를 기본으로 작업하고 있습니다</li>
     </ul>
     <div class="modal-section-title">Performance</div>
     <ul class="modal-list">
       <li>입사 전/후 4개월 비교 기준 CTR <strong>5.7% → 6.0%</strong> 상승</li>
-      <li>YouTube Studio 추정 기준 예상 수익 <strong>$8,500 이상</strong> 증가</li>
+      <li>수익 <strong>$8,500 이상</strong> 증가 (월중 추이로 예상한 수치를 월말 실제 정산으로 확인)</li>
       <li>구독자 증가율 약 <strong>12%</strong> 향상</li>
     </ul>
     <div class="modal-section-title">Roles & Responsibilities</div>
@@ -1901,7 +1901,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     </ul>
     <div class="modal-section-title">Failure → Retry</div>
     <ul class="modal-list">
-      <li>초기 시안은 제가 재밌다고 본 장면 중심이었고 A/B에서 밀렸습니다 → <strong>대중이 공감할 상황(시즌 이슈·트렌드)</strong>을 넣은 시안으로 바꾼 뒤부터 통했고, 그 구성을 규칙으로 고정</li>
+      <li>흑백요리사가 유행할 때 <strong>메인 포스터를 패러디한 시안</strong>과 <strong>흑백요리사 관련 다른 밈을 쓴 시안</strong>을 같이 올렸습니다. 저는 포스터의 상징성이 더 크고 잘 표현됐다고 봐서 그쪽이 표를 더 받을 거라 예상했는데, 사내 투표도 A/B 테스트도 <strong>다른 밈 시안의 클릭률이 더 높았습니다</strong> → 상징성보다 사람들이 이미 공유하고 있는 밈의 맥락이 먼저라는 걸 확인했고, 이후 시안은 "내가 보기에 잘 된 것"이 아니라 "지금 사람들이 돌려 보는 것"에서 출발</li>
     </ul>
     <div class="modal-section-title">Lessons Learned</div>
     <ul class="modal-list">
@@ -1951,9 +1951,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <div class="modal-section-title">Performance</div>
     <ul class="modal-list">
       <li><strong>기준점:</strong> 오리지널 쇼츠는 업로드 4~5일 기준 <strong>100만</strong>이 평균선</li>
-      <li>한 달 내 조회수 <strong>1,000만 이상</strong> 콘텐츠 2편 (기준선의 <strong>10배</strong>) — 오리지널 쇼츠 포맷의 확산 가능성 검증</li>
+      <li>한 달 내 조회수 <strong>1,000만 이상</strong> 콘텐츠 2편 (기준선의 <strong>10배</strong>) — 둘 다 <strong>극장판 홍보 콘텐츠에 당시 유행하던 밈을 섞은</strong> 편. 이후로도 100만 이상 편이 꾸준히 나옴</li>
       <li>평균 시청 지속률 <strong>69% → 72.8%</strong> 상승, 이탈률 감소</li>
-      <li>댓글 내 영화 관련 언급 증가 → 자연스러운 홍보 효과 확인</li>
+      <li>정성 반응: 극장판에만 등장하는 캐릭터를 쇼츠에 먼저 내보내자 <strong>"이 캐릭터 누구냐", "극장 개봉 언제냐"</strong> 같은 댓글이 늘어남 — 홍보를 직접 말하지 않아도 관람 관심으로 이어지는 걸 확인</li>
     </ul>
     <div class="modal-section-title">Roles & Responsibilities</div>
     <ul class="modal-list">
@@ -1966,6 +1966,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <ul class="modal-list">
       <li>쇼츠는 단순 영상 편집이 아닌 타겟의 공감과 반응을 유도하는 구조 설계라는 점을 체득</li>
       <li>홍보 메시지도 직접 전달하기보다 상황과 캐릭터 안에 자연스럽게 녹일 때 반응이 높아진다는 인사이트 도출</li>
+      <li>잘 된 콘텐츠의 내용을 그대로 가져와도 똑같이 잘 나오지 않았고, 시기별 이벤트나 유행이라는 이유만으로도 잘 나오지 않았습니다. <strong>트렌드 + 세계관에 맞는 캐릭터 배치 + 반전 요소(재미)</strong> 세 가지가 결합됐을 때 조회수가 잘 나올 확률이 올라간다는 것까지는 확인했지만, 원인을 더 구체적으로 분해해 제작 방식을 바꾸는 데까지는 가지 못했습니다 — 다시 한다면 이 세 조건을 체크리스트로 만들어 기획 단계에서 확인했을 것</li>
     </ul>
     <div class="modal-section-title">Contents</div>
     <div class="modal-showcase">
@@ -1998,10 +1999,11 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <ul class="modal-list">
       <li>시즌 3 제작 지연으로 신규 콘텐츠 공급이 어려운 상황 → 기존 재편집 콘텐츠만으로는 사용자 이탈을 막기 어려운 구조</li>
       <li>캐릭터 IP의 인지도는 유지되고 있어 지속적인 노출과 팬 유입을 위한 대체 콘텐츠 전략이 필요</li>
+      <li>체리툰은 사연툰이라 <strong>원작 안에 캐릭터 성격이나 세계관이 거의 없음</strong> — 브레드이발소처럼 애니메이션 세계관이 쇼츠로 이어지는 구조가 아니라, 쇼츠를 만들면서 세계관이 만들어지는 구조</li>
     </ul>
     <div class="modal-section-title">Solution</div>
     <ul class="modal-list">
-      <li><strong>왜 반복 구조였나:</strong> 이어받은 채널은 성과가 있었지만 잘 된 것을 반복하는 구조가 없었습니다. 개별 콘텐츠의 감에 기대지 않고 <strong>잘 된 포맷을 시리즈로 여러 번 만들고, 소재는 주간 회의에서 8명이 가져온 밈을 교차검증해 고르는</strong> 쪽을 택했습니다</li>
+      <li><strong>왜 시리즈화였나:</strong> 이어받은 채널은 성과가 있었지만 시리즈물을 만들어본 적이 없어 잘 된 것을 반복하는 구조가 없었습니다. 전임자 때 잘 됐던 소재를 골라 <strong>시리즈로 여러 번 만드는 시도</strong>를 했고, 소재는 주간 회의에서 8명이 가져온 밈을 교차검증해 골랐습니다</li>
       <li>이어받은 숏폼 포맷에 트렌드·밈·시의성을 매주 갱신해 반영하는 오리지널 콘텐츠 기획</li>
       <li>캐릭터 성격 기반 상황극 포맷을 유지·보완해 반복 제작이 가능한 콘텐츠 구조로 정착</li>
       <li>콘텐츠 소비 → 채널 재방문 → 팬 유입으로 이어지는 팬덤 빌딩 구조를 고려해 설계</li>
@@ -2010,7 +2012,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <ul class="modal-list">
       <li><strong>기준점:</strong> 체리툰 숏폼 평균선은 업로드 기준 <strong>150만</strong></li>
       <li>4개월간 조회수 <strong>300만+ 숏폼 콘텐츠 6건</strong> (기준선의 <strong>2배</strong>)</li>
-      <li>평균 시청 지속률 <strong>76.7% → 80.3%</strong> 상승</li>
+      <li>평균 시청 지속률 <strong>76.7% → 80.3%</strong> (넘겨받기 전 4개월 vs 넘겨받은 후 4개월)</li>
     </ul>
     <div class="modal-section-title">Roles & Responsibilities</div>
     <ul class="modal-list">
@@ -2018,10 +2020,15 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <li>조회수·시청 지속률 등 핵심 지표 분석 및 개선 방향 도출</li>
       <li>데이터 기반으로 콘텐츠 전략을 반복 개선하며 제작 구조 구축</li>
     </ul>
+    <div class="modal-section-title">Failure → Retry</div>
+    <ul class="modal-list">
+      <li>원작에 세계관이 없다고 보고 초반엔 <strong>밈을 그대로 따라 만들었습니다</strong>. 그런데 알고 보니 그동안 만들어진 쇼츠들이 이미 체리툰의 세계관 — 캐릭터 성격, 러브라인 같은 관계 — 을 쌓아오고 있었고, 저는 그걸 간과하고 있었습니다 → <strong>쇼츠가 곧 세계관을 만드는 채널</strong>이라는 걸 인식한 뒤부터는 기존 쇼츠에서 형성된 관계와 성격을 이어받아 밈을 배치했습니다. 브레드이발소보다 어려웠던 이유가 여기 있었습니다</li>
+    </ul>
     <div class="modal-section-title">Lessons Learned</div>
     <ul class="modal-list">
       <li>숏폼 콘텐츠는 단순 편집이 아니라 타겟과 상황을 기반으로 설계되어야 한다는 점을 학습</li>
       <li>포맷 구조에 따라 조회수와 유입 성과가 달라지며 콘텐츠 기획 단계에서 구조 설계가 핵심이라는 인사이트 도출</li>
+      <li>원작에 세계관이 없는 IP는 쇼츠가 세계관을 만든다 — 그래서 이전 쇼츠들을 먼저 읽어야 한다는 것을 배움</li>
     </ul>
     <div class="modal-section-title">Contents</div>
     <div class="modal-showcase">
@@ -2048,9 +2055,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <li><strong>사용 툴:</strong> Photoshop <span class="skill skill-high">상</span> · Firefly · Gemini · Kling</li>
       <li><strong>목적:</strong> 상업 IP 제약 없이 "어떻게 보는 사람을 몰입시킬 수 있는가"를 자유롭게 실험하는 공간</li>
     </ul>
-    <div class="modal-section-title">Problem</div>
+    <div class="modal-section-title">Origin</div>
     <ul class="modal-list">
-      <li>상업 IP에서는 캐릭터와 세계관이 정해져 있어 <strong>"무엇이 사람을 멈추게 하는가"를 처음부터 실험할 수 없음</strong> — 감정·서사·구도를 자유롭게 바꿔가며 반응을 볼 공간이 필요</li>
+      <li>대학 시절 <strong>Photoshop을 더 잘 다루기 위한 습작</strong>을 올리는 연습 공간으로 시작. 만들다 보니 작업에 색깔이 생겼고, 인디 아티스트들에게서 연락을 받아 <strong>앨범 커버 작업</strong>으로 이어짐</li>
     </ul>
     <div class="modal-section-title">Solution</div>
     <ul class="modal-list">
@@ -2094,23 +2101,22 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <li><strong>기여도:</strong> 썸네일 및 SNS 콘텐츠 기획·제작 전 과정 <strong>100%</strong> 직접 수행</li>
       <li><strong>사용 툴:</strong> Photoshop <span class="skill skill-high">상</span> · Premiere Pro <span class="skill skill-high">상</span> · After Effects <span class="skill skill-mid">중</span></li>
       <li><strong>타겟:</strong> 1020세대</li>
-      <li><strong>목적:</strong> 클릭 → 소비 → 반응으로 이어지는 구조 설계 및 성과 개선</li>
+      <li><strong>목적:</strong> 투니버스 유튜브 썸네일과 SNS 게시물 제작</li>
     </ul>
     <div class="modal-section-title">Problem</div>
     <ul class="modal-list">
-      <li>기존 콘텐츠는 썸네일 클릭 이후 소비와 반응으로 이어지지 않는 구조적 한계 존재</li>
-      <li>홍보성 콘텐츠는 광고 느낌이 강해 자연스럽게 소비되지 못하고 이탈로 이어지는 문제 발생</li>
+      <li>썸네일 작업 자체가 처음이라 초반엔 무엇이 클릭을 만드는지 감을 잡지 못함</li>
+      <li>홍보성 SNS 게시물은 광고 느낌이 강해 자연스럽게 소비되지 않는 문제</li>
     </ul>
     <div class="modal-section-title">Solution</div>
     <ul class="modal-list">
-      <li>썸네일은 감정·궁금증 중심으로 클릭 유도, SNS 콘텐츠는 트렌드 기반 상황극으로 자연스러운 소비 유도</li>
-      <li>유입과 소비 각 단계에서 사용자 반응을 유도하는 구조로 개선</li>
+      <li>일하면서 점차 구분이 생김 — <strong>썸네일은 감정·궁금증으로 클릭을 만들고, SNS 게시물은 트렌드 기반 상황극으로 자연스럽게 소비되게</strong> 하는 쪽으로 방향을 나눔</li>
+      <li>당시엔 지표 분석 역할이 없어 성과를 숫자로 확인하지는 못함 — 이 구분은 이후 브레드이발소에서 A/B와 CTR로 검증하게 됨</li>
     </ul>
     <div class="modal-section-title">Roles & Responsibilities</div>
     <ul class="modal-list">
-      <li>감정·궁금증 중심 썸네일 기획으로 클릭 유도 개선</li>
-      <li>캐릭터 상황극 + 트렌드 반영 SNS 콘텐츠 제작으로 자연스러운 소비 유도</li>
-      <li>역할별 전략 분리를 통해 클릭과 반응을 각각 최적화</li>
+      <li>투니버스 유튜브 썸네일 기획·디자인</li>
+      <li>캐릭터 IP 기반 SNS 게시물 기획·제작 (트렌드·상황극 반영)</li>
     </ul>
     <div class="modal-section-title">Lessons Learned</div>
     <ul class="modal-list">
