@@ -573,6 +573,7 @@
     }
 
     .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .project-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
     .project-card { background: transparent; border: none; cursor: pointer; }
     .project-card:hover .project-card-title { color: var(--black); }
@@ -1519,7 +1520,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="project-releases-header">
         <span class="project-releases-title">브레드이발소 | 2024.07 – 2026.03</span>
       </div>
-      <div class="project-grid">
+      <div class="project-grid project-grid-2">
         <div class="project-card" onclick="openModal('modal-format')">
           <div class="card-thumb-wrap">
             <img class="project-card-thumb" src="https://hojinyu315.github.io/naverwebtoon/images/thumb-format.jpg" alt="쇼츠 포맷" onerror="this.style.background='#f4f4f4'">
