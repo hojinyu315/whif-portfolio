@@ -573,7 +573,10 @@
     }
 
     .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .project-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    /* 3열 폭은 유지, 한 줄에 2개만 배치 */
+    .project-grid-2 { grid-template-columns: repeat(2, calc((100% - 24px) / 3)); gap: 12px; }
+    .sec-dark .activity-award { color: #fff; }
+    .sec-dark .skill-high { color: #fff; }
 
     .project-card { background: transparent; border: none; cursor: pointer; }
     .project-card:hover .project-card-title { color: var(--black); }
